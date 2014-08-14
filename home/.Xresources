@@ -1,0 +1,75 @@
+!!!!!!!!!!!
+!! URxvt !!
+!!!!!!!!!!!
+
+! General
+urxvt*loginShell:     true
+urxvt*cursorBlink:   false
+urxvt*urgentOnBell:   true
+
+! Scrolling
+urxvt*scrollBar:        false
+
+! Extensions
+urxvt.perl-lib:         /home/leonardo/.config/urxvt/perl/
+urxvt.perl-ext-common:  default,clipboard,url-select
+urxvt.keysym.M-c:       perl:clipboard:copy
+urxvt.keysym.M-v:       perl:clipboard:paste
+urxvt.keysym.M-u:       perl:url-select:select_next
+urxvt.urlLauncher:      firefox
+
+! Appearance
+urxvt.font:         xft:anonymous pro:size=9
+
+
+!!!!!!!!!
+!! Xft !!
+!!!!!!!!!
+
+Xft.antialias:           1
+Xft.dpi:               118
+Xft.hinting:             1
+Xft.hintstyle:  hintmedium
+Xft.lcdfilter:  lcddefault
+Xft.rgba:              rgb
+
+
+!!!!!!!!!!!
+!! XTerm !!
+!!!!!!!!!!!
+
+xterm*renderFont:      True
+xterm*faceName:   Monospace
+xterm*faceSize:           9
+
+
+! terminal colors ------------------------------------------------------------
+
+! tangoesque scheme
+*.background: #111111
+*.foreground: #babdb6
+*.cursorColor: #babdb6
+! Black (not tango) + DarkGrey
+*.color0:  #000000
+*.color8:  #555753
+! DarkRed + Red
+*.color1:  #ff6565
+*.color9:  #ff8d8d
+! DarkGreen + Green
+*.color2:  #93d44f
+*.color10: #c8e7a8
+! DarkYellow + Yellow
+*.color3:  #eab93d
+*.color11: #ffc123
+! DarkBlue + Blue
+*.color4:  #204a87
+*.color12: #3465a4
+! DarkMagenta + Magenta
+*.color5:  #ce5c00
+*.color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*.color6:  #89b6e2
+*.color14: #46a4ff
+! LightGrey + White
+*.color7:  #cccccc
+*.color15: #ffffff
