@@ -19,7 +19,7 @@ urxvt.keysym.M-u:       perl:url-select:select_next
 urxvt.urlLauncher:      firefox
 
 ! Appearance
-urxvt.font:         xft:anonymous pro:size=9
+urxvt.font:         xft:anonymous pro:size=12
 
 
 !!!!!!!!!
@@ -27,7 +27,7 @@ urxvt.font:         xft:anonymous pro:size=9
 !!!!!!!!!
 
 Xft.antialias:           1
-Xft.dpi:               118
+Xft.dpi:                82
 Xft.hinting:             1
 Xft.hintstyle:  hintmedium
 Xft.lcdfilter:  lcddefault
@@ -40,7 +40,7 @@ Xft.rgba:              rgb
 
 xterm*renderFont:      True
 xterm*faceName:   Monospace
-xterm*faceSize:           9
+xterm*faceSize:          11
 
 
 ! terminal colors ------------------------------------------------------------
