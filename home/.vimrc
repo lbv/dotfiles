@@ -21,6 +21,7 @@ set listchars=tab:>.,eol:¬
 set mouse=a
 set noexpandtab
 set nohidden
+set noshowmode
 set numberwidth=4
 set preserveindent
 set shiftwidth=4
@@ -39,8 +40,29 @@ let g:pandoc_use_hard_wraps = 1
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_section_y = '%{&fenc}%{strlen(&fenc) ? "," : ""}%{&ff}'
+let g:airline_mode_map = {
+	\'__' : '-',
+	\'n'  : 'N',
+	\'i'  : 'I',
+	\'R'  : 'R',
+	\'c'  : 'C',
+	\'v'  : 'V',
+	\'V'  : 'V',
+	\'^V' : 'V',
+	\'s'  : 'S',
+	\'S'  : 'S',
+	\'^S' : 'S'
+\}
+let g:airline#extensions#default#section_truncate_width = {
+	\'b': 70,
+	\'y': 70
+\}
 
-let g:airline#extensions#default#section_truncate_width = { 'b': 70, 'y': 70, }
+if &shell =~ "/fish"
+	set shell=/bin/sh
+endif
+
 
 "
 " Vundle
@@ -52,6 +74,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'aklt/plantuml-syntax'
 Bundle 'baskerville/bubblegum'
+Bundle 'bitc/vim-bad-whitespace'
 Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'dag/vim-fish'
@@ -63,7 +86,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-coffee-script'
 Bundle 'vim-pandoc'
-Bundle 'vim-scripts/SyntaxRange'
 Bundle 'UltiSnips'
 
 Bundle 'file:///home/leonardo/projects/vim-phi-bundle'
@@ -94,20 +116,6 @@ colorscheme bubblegum
 "colorscheme guardian
 "colorscheme zenburn
 
-" The same as cSpaceError, but defined here to be used everywhere
-highlight def link GenericSpaceError Error
-au Syntax * syntax match GenericSpaceError display excludenl containedin=.* "\s\+$"
-au Syntax * syntax match GenericSpaceError display containedin=.* " \+\t"me=e-1
-
-
-""
-"" Term-related config
-""
-
-if &term =~ "screen"
-    exec "set <S-Left>=\e[1;2D"
-    exec "set <S-Right>=\e[1;2C"
-endif
 
 
 ""
@@ -115,36 +123,37 @@ endif
 ""
 
 let mapleader = ","
+let maplocalleader = "-"
 
-imap <C-BS> <C-W>
+:inoremap jk <esc>
 
-" Close current buffer
-map <F2> :confirm bdel<CR>
-
-map <F4> :set number!<CR>
-map <F5> :let &cc=(&cc == '' ? '+4' : '')<CR>
-map <F6> :set list!<CR>
-
-map <F7> :NERDTreeToggle<CR>
-
-" Toggle Taglist
-map <F8> :TlistToggle<CR>
+" F2: Close current buffer
+" F4: Toggle numbering
+" F5: Toggle column bar
+" F6: Toggle identify spaces
+" F7: Toggle NERDTree
+noremap <F2> :confirm bdel<CR>
+noremap <F4> :set number!<CR>
+noremap <F5> :let &cc=(&cc == '' ? '+4' : '')<CR>
+noremap <F6> :set list!<CR>
+noremap <F7> :NERDTreeToggle<CR>
 
 " Folding
-map <C-Up> zc
-map <C-Down> zo
-map <C-S-Right> zR
-map <C-S-Left> zM
+noremap <C-Up> zc
+noremap <C-Down> zo
+noremap <C-S-Right> zR
+noremap <C-S-Left> zM
 
 " Toggle highliting of search matches
-nmap <silent> <C-H> :let &hls=!&hls<CR>
+nnoremap <silent> <C-H> :let &hls=!&hls<CR>
 
 " Moving around buffers
-map <S-Right> :bn!<CR>
-map <S-Left> :bp!<CR>
+noremap <Leader>l :bn!<CR>
+noremap <Leader>h :bp!<CR>
 
 " View/edit vimrc
-nmap <Leader>s :source ~/.vimrc<CR>
-nmap <Leader>v :e ~/.vimrc
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>ev :e $MYVIMRC<CR>
 
+" Formatting
 nnoremap Q gq
