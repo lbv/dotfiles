@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 
+
 ""
 "" Global variables/options
 ""
@@ -29,7 +30,7 @@ set showcmd
 set smarttab
 set tabstop=4
 set textwidth=76
-set wmh=0
+set winminheight=0
 
 let g:tex_flavor='latex'
 let g:localvimrc_ask = 0
@@ -67,7 +68,7 @@ endif
 "
 " Vundle
 "
-set rtp+=~/.vim/bundle/vundle/
+set runtimepath+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -134,7 +135,7 @@ let maplocalleader = "-"
 " F7: Toggle NERDTree
 noremap <F2> :confirm bdel<CR>
 noremap <F4> :set number!<CR>
-noremap <F5> :let &cc=(&cc == '' ? '+4' : '')<CR>
+noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
 noremap <F6> :set list!<CR>
 noremap <F7> :NERDTreeToggle<CR>
 
@@ -145,15 +146,15 @@ noremap <C-S-Right> zR
 noremap <C-S-Left> zM
 
 " Toggle highliting of search matches
-nnoremap <silent> <C-H> :let &hls=!&hls<CR>
+nnoremap <silent> <C-H> :set hlsearch!<CR>
 
 " Moving around buffers
-noremap <Leader>l :bn!<CR>
-noremap <Leader>h :bp!<CR>
+noremap <Leader>l :bnext!<CR>
+noremap <Leader>h :bprevious!<CR>
 
 " View/edit vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
-nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>ev :edit $MYVIMRC<CR>
 
 " Formatting
 nnoremap Q gq
