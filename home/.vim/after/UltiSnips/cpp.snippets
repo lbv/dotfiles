@@ -1,0 +1,128 @@
+snippet cf "Codeforces template"
+#include <cstdio>
+
+
+$1
+
+
+int main()
+{
+	scanf("$2", );
+
+	return 0;
+}
+endsnippet
+
+snippet lightoj "LightOJ template"
+#include <cstdio>
+
+
+$1
+
+
+int main()
+{
+	int T;
+	scanf("%d", &T);
+
+	int ncase = 0;
+	while (T--) {
+		scanf("$2", );
+		printf("Case %d: ", ++ncase);
+	}
+
+	return 0;
+}
+endsnippet
+
+snippet uva "UVa template"
+#include <cstdio>
+
+
+$1
+
+
+int main()
+{
+	while (true) {
+		scanf("$2", );
+	}
+
+	return 0;
+}
+endsnippet
+
+snippet gen "Generator template"
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+
+
+#define MAXT 100$1
+#define NCRIT 3
+
+
+int T;
+
+
+void gen(bool crit = false)
+{
+	$2
+	--T;
+}
+
+int main()
+{
+	srand(time(NULL));
+
+	T = MAXT;
+	printf("%d\n", T);
+
+	for (int i = 0; i < NCRIT; ++i) gen(true);
+	while (T) gen();
+
+	return 0;
+}
+endsnippet
+
+snippet LSB "LSB macros"
+#define PosLSB(x) (__builtin_ctzll(x))
+#define GetLSB(x) ((x) & -(x))
+#define ClrLSB(x) (x &= ~GetLSB(x))
+endsnippet
+
+snippet Clr "Clr macro"
+#define Clr(m) memset(m, 0, sizeof(m))
+endsnippet
+
+snippet ClrN "ClrN macro"
+#define ClrN(m,n,t) memset(m, 0, sizeof(t)*(n))
+endsnippet
+
+snippet Neg "Neg macro"
+#define Neg(m) memset(m, -1, sizeof(m))
+endsnippet
+
+snippet NegN "NegN macro"
+#define NegN(m,n,t) memset(m, -1, sizeof(t)*(n))
+endsnippet
+
+snippet Inf "Inf macro"
+#define Inf(m) memset(m, 0x3f, sizeof(m))
+endsnippet
+
+snippet InfN "InfN macro"
+#define InfN(m,n,t) memset(m, 0x3f, sizeof(t)*(n))
+endsnippet
+
+snippet For "For macro"
+#define For(t,i,c) for(t::iterator i=(c).begin(); i != (c).end(); ++i)
+endsnippet
+
+snippet RFor "RFor macro"
+#define RFor(t,i,c) for(t::reverse_iterator i=(c).rbegin(); i!=(c).rend(); ++i)
+endsnippet
+
+snippet std "Use std namespace"
+using namespace std;
+endsnippet
