@@ -89,8 +89,6 @@ Bundle 'vim-coffee-script'
 Bundle 'vim-pandoc'
 Bundle 'UltiSnips'
 
-Bundle 'file:///home/leonardo/projects/vim-phi-bundle'
-
 
 "
 " More options
