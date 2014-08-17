@@ -126,7 +126,12 @@ colorscheme bubblegum
 let mapleader = ","
 let maplocalleader = "-"
 
-:inoremap jk <esc>
+" Insert mode mappings
+inoremap jk <esc>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
 
 " F2: Close current buffer
 " F4: Toggle numbering
