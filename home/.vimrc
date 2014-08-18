@@ -18,7 +18,8 @@ set hidden
 set hlsearch
 set incsearch
 set laststatus=2
-set listchars=tab:>.,eol:¬
+set list
+set listchars=tab:>\ ,trail:·
 set mouse=a
 set noexpandtab
 set nohidden
@@ -112,7 +113,7 @@ let mapleader = ","
 let maplocalleader = "-"
 
 " Insert mode mappings
-inoremap jk <esc>
+inoremap kj <esc>
 inoremap <c-h> <left>
 inoremap <c-l> <right>
 inoremap <c-j> <down>
