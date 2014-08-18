@@ -65,35 +65,48 @@ if &shell =~ "/fish"
 endif
 
 
-"
-" Vundle
-"
-set runtimepath+=$HOME/.vim/bundle/vundle/
+"""
+""" Bundle management, through vundle
+"""
+
+" Basics
+set runtimepath+=$HOME/.vim/bundle/Vundle.vim/
 call vundle#rc()
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'gmarik/vundle'
+" List of plugins follows..
 
-Bundle 'aklt/plantuml-syntax'
-Bundle 'baskerville/bubblegum'
-Bundle 'bitc/vim-bad-whitespace'
-Bundle 'bling/vim-airline'
-Bundle 'bling/vim-bufferline'
-Bundle 'dag/vim-fish'
-Bundle 'dpwright/vim-tup'
-Bundle 'groenewege/vim-less'
-Bundle 'honza/vim-snippets'
-Bundle 'localvimrc'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-coffee-script'
-Bundle 'vim-pandoc'
-Bundle 'UltiSnips'
+" Color schemes
+Plugin 'baskerville/bubblegum'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-scripts/wombat256.vim'
 
+" Snippets
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 
-"
-" More options
-"
+" Syntax/Format integration
+Plugin 'aklt/plantuml-syntax'
+Plugin 'dag/vim-fish'
+Plugin 'dpwright/vim-tup'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
+" Unite
+Plugin 'Shougo/unite.vim'
+Plugin 'tsukkee/unite-help'
+
+" Vim utilities
+Plugin 'bitc/vim-bad-whitespace'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'embear/vim-localvimrc'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+
+" Post-bundle options
 filetype plugin indent on
 syntax on
 
