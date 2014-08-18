@@ -48,14 +48,25 @@ Plugin 'gmarik/Vundle.vim'
 
 " List of plugins follows..
 
+" Code analysis in real-time
+Plugin 'scrooloose/syntastic'
+
 " Color schemes
 Plugin 'baskerville/bubblegum'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/wombat256.vim'
 
+" :SaveSession and :OpenSession
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
 " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
+
+" Statusline
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
 
 " Syntax/Format integration
 Plugin 'aklt/plantuml-syntax'
@@ -66,19 +77,16 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
-" Unite
+" Unite - browsing stuff inside vim with an uniform interface
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'tsukkee/unite-help'
 
-" Vim utilities
-Plugin 'bitc/vim-bad-whitespace'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+" Extra utilities
 Plugin 'embear/vim-localvimrc'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 
-" Post-bundle options
+" Post-vundle-init options
 filetype plugin indent on
 syntax on
 
@@ -113,15 +121,15 @@ inoremap <c-k> <up>
 " F-keys
 "
 "   F2: Close current buffer
+"   F3: Toggle file explorer
 "   F4: Toggle numbering
 "   F5: Toggle column bar
-"   F6: Toggle identify spaces
-"   F7: Toggle NERDTree
+"   F6: Toggle whitespace visibility
 noremap <F2> :confirm bdel<CR>
+noremap <F3> :VimFilerExplorer<CR>
 noremap <F4> :set number!<CR>
 noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
 noremap <F6> :set list!<CR>
-noremap <F7> :NERDTreeToggle<CR>
 
 " Folding
 noremap <C-Up> zc
