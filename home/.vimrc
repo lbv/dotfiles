@@ -57,10 +57,6 @@ Plugin 'baskerville/bubblegum'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/wombat256.vim'
 
-" :SaveSession and :OpenSession
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-
 " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
@@ -112,31 +108,18 @@ colorscheme jellybeans
 let mapleader = ","
 let maplocalleader = "-"
 
-" Insert mode mappings
-inoremap kj <esc>
-inoremap <c-h> <left>
-inoremap <c-l> <right>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-
 " F-keys
 "
 "   F2: Close current buffer
 "   F3: Toggle file explorer
-"   F4: Toggle numbering
+"   F4: Toggle numbering/fold column
 "   F5: Toggle column bar
 "   F6: Toggle whitespace visibility
 noremap <F2> :confirm bdel<CR>
 noremap <F3> :VimFilerExplorer<CR>
-noremap <F4> :set number!<CR>
+noremap <F4> :set number!<CR>:let &foldcolumn=&fdc==0?1:0<CR>
 noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
 noremap <F6> :set list!<CR>
-
-" Folding
-noremap <C-Up> zc
-noremap <C-Down> zo
-noremap <C-S-Right> zR
-noremap <C-S-Left> zM
 
 " Toggle highliting of search matches
 nnoremap <silent> <C-H> :set hlsearch!<CR>
