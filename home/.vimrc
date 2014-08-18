@@ -32,34 +32,6 @@ set tabstop=4
 set textwidth=76
 set winminheight=0
 
-let g:tex_flavor='latex'
-let g:localvimrc_ask = 0
-
-let g:pandoc_no_empty_implicits = 1
-let g:pandoc_no_spans = 1
-let g:pandoc_use_hard_wraps = 1
-
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_section_y = '%{&fenc}%{strlen(&fenc) ? "," : ""}%{&ff}'
-let g:airline_mode_map = {
-	\'__' : '-',
-	\'n'  : 'N',
-	\'i'  : 'I',
-	\'R'  : 'R',
-	\'c'  : 'C',
-	\'v'  : 'V',
-	\'V'  : 'V',
-	\'^V' : 'V',
-	\'s'  : 'S',
-	\'S'  : 'S',
-	\'^S' : 'S'
-\}
-let g:airline#extensions#default#section_truncate_width = {
-	\'b': 70,
-	\'y': 70
-\}
-
 if &shell =~ "/fish"
 	set shell=/bin/sh
 endif
@@ -170,3 +142,11 @@ nnoremap <Leader>ev :edit $MYVIMRC<CR>
 
 " Formatting
 nnoremap Q gq
+
+
+"""
+""" Source config files with plugin-specific customizations
+"""
+
+let s:p_settings="$HOME/.vim/plugin_settings/*.vim"
+execute join(map(split(glob(s:p_settings)), '"source " . v:val'), "\n")
