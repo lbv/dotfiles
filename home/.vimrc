@@ -2,9 +2,9 @@ set nocompatible
 filetype off
 
 
-""
-"" Global variables/options
-""
+"""
+""" Global options
+"""
 
 set autochdir
 set autoindent
@@ -13,7 +13,7 @@ set cindent
 set cinkeys=0{,0},:,!<Tab>,!^F
 set cinoptions=:0,(0,W4
 set copyindent
-set dir=~/.tmp,/tmp
+set dir=~/.cache/vim,/tmp
 set hidden
 set hlsearch
 set incsearch
@@ -111,23 +111,17 @@ filetype plugin indent on
 syntax on
 
 
-""
-"" Color schemes
-""
+"""
+""" Color schemes
+"""
 
-colorscheme bubblegum
+colorscheme jellybeans
 
 " Other good ones
-"colorscheme xoria256
-"colorscheme wombat256mod
-"colorscheme desert256
-"colorscheme anotherdark
-"colorscheme camo
-"colorscheme chocolateliquor
-"colorscheme desert
-"colorscheme guardian
-"colorscheme zenburn
 
+"colorscheme bubblegum
+"colorscheme wombat256mod
+"colorscheme xoria256
 
 
 ""
@@ -144,11 +138,13 @@ inoremap <c-l> <right>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
 
-" F2: Close current buffer
-" F4: Toggle numbering
-" F5: Toggle column bar
-" F6: Toggle identify spaces
-" F7: Toggle NERDTree
+" F-keys
+"
+"   F2: Close current buffer
+"   F4: Toggle numbering
+"   F5: Toggle column bar
+"   F6: Toggle identify spaces
+"   F7: Toggle NERDTree
 noremap <F2> :confirm bdel<CR>
 noremap <F4> :set number!<CR>
 noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
