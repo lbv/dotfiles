@@ -13,17 +13,15 @@ set cindent
 set cinkeys=0{,0},:,!<Tab>,!^F
 set cinoptions=:0,(0,W4
 set copyindent
+set cursorline
 set dir=~/.cache/vim,/tmp
 set hidden
 set hlsearch
 set incsearch
 set laststatus=2
 set list
-set listchars=tab:>\ ,trail:·
+set listchars=tab:→\ ,trail:×
 set mouse=a
-set noexpandtab
-set nohidden
-set noshowmode
 set numberwidth=4
 set preserveindent
 set shiftwidth=4
@@ -31,10 +29,26 @@ set showcmd
 set smarttab
 set tabstop=4
 set textwidth=76
+set ttimeout
 set winminheight=0
 
+set noexpandtab
+set nohidden
+set noshowmode
+set notimeout
+
+" Sorry my fish.. you don't play well with vundle..
 if &shell =~ "/fish"
 	set shell=/bin/sh
+endif
+
+" Enable side bars only if there is enough room
+if &columns > 79
+	set colorcolumn=+4
+	if &columns > 83
+		set number
+		if &columns > 84 | set foldcolumn=1 | endif
+	endif
 endif
 
 
