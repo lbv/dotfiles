@@ -24,15 +24,12 @@ set listchars=tab:→\ ,trail:×
 set mouse=a
 set numberwidth=4
 set preserveindent
-set shiftwidth=4
 set showcmd
 set smarttab
-set tabstop=4
 set textwidth=76
 set ttimeout
 set winminheight=0
 
-set noexpandtab
 set nohidden
 set noshowmode
 set notimeout
@@ -66,11 +63,23 @@ Plugin 'gmarik/Vundle.vim'
 " Code analysis in real-time
 Plugin 'scrooloose/syntastic'
 
+" Coding style sanity
+Plugin 'editorconfig/editorconfig-vim'
+
 " Color schemes
 Plugin 'baskerville/bubblegum'
 Plugin 'jnurmine/Zenburn'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/wombat256.vim'
+
+" Language specific syntax and format integration
+Plugin 'aklt/plantuml-syntax'
+Plugin 'dag/vim-fish'
+Plugin 'dpwright/vim-tup'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Snippets
 Plugin 'honza/vim-snippets'
@@ -80,23 +89,11 @@ Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 
-" Syntax/Format integration
-Plugin 'aklt/plantuml-syntax'
-Plugin 'dag/vim-fish'
-Plugin 'dpwright/vim-tup'
-Plugin 'groenewege/vim-less'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-
 " Unite - browsing stuff inside vim with an uniform interface
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tsukkee/unite-help'
-
-" Extra utilities
-Plugin 'embear/vim-localvimrc'
 
 " Post-vundle-init options
 filetype plugin indent on
