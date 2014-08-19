@@ -123,7 +123,7 @@ highlight SpecialKey ctermfg=238
 "" Keyboard mappings
 ""
 
-let mapleader = ","
+let mapleader = "\<space>"
 let maplocalleader = "-"
 
 " F-keys
