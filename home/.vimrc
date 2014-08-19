@@ -54,6 +54,7 @@ Plugin 'scrooloose/syntastic'
 
 " Color schemes
 Plugin 'baskerville/bubblegum'
+Plugin 'jnurmine/Zenburn'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/wombat256.vim'
 
@@ -92,13 +93,16 @@ syntax on
 """ Color schemes
 """
 
-colorscheme jellybeans
+colorscheme bubblegum
 
 " Other good ones
 
-"colorscheme bubblegum
+"colorscheme jellybeans
 "colorscheme wombat256mod
-"colorscheme xoria256
+"colorscheme zenburn
+
+" A subtle color for whitespaces
+highlight SpecialKey ctermfg=238
 
 
 ""
