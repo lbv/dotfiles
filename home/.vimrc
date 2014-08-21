@@ -15,7 +15,8 @@ set cinoptions=:0,(0,W4
 set copyindent
 set cursorline
 set dir=~/.cache/vim,/tmp
-set hidden
+set foldlevelstart=1
+set foldmethod=syntax
 set hlsearch
 set incsearch
 set laststatus=2
@@ -30,7 +31,6 @@ set textwidth=76
 set ttimeout
 set winminheight=0
 
-set nohidden
 set noshowmode
 set notimeout
 
@@ -136,8 +136,8 @@ noremap <F4> :set number!<CR>:let &foldcolumn=&fdc==0?1:0<CR>
 noremap <F5> :let &colorcolumn=(&cc == '' ? '+4' : '')<CR>
 noremap <F6> :set list!<CR>
 
-" Toggle highliting of search matches
-nnoremap <silent> <C-H> :set hlsearch!<CR>
+" Turn off highliting until next search
+nnoremap <silent><CR> :noh<CR>
 
 " Moving around buffers
 noremap <Leader>l :bnext!<CR>
@@ -152,7 +152,7 @@ nnoremap Q gq
 
 
 """
-""" Source config files with plugin-specific customizations
+""" Plugin-specific customizations
 """
 
 let s:p_settings="$HOME/.vim/plugin_settings/*.vim"
