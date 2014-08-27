@@ -15,7 +15,7 @@ set cinoptions=:0,(0,W4
 set copyindent
 set cursorline
 set dir=~/.cache/vim,/tmp
-set foldlevelstart=1
+set foldlevelstart=5
 set foldmethod=syntax
 set hlsearch
 set incsearch
