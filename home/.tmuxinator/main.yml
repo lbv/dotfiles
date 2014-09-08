@@ -1,0 +1,9 @@
+# ~/.tmuxinator/main.yml
+
+name: main
+root: ~/workspace
+
+windows:
+  - octave: octave
+  - music: ncmpcpp
+  - workspace: echo Boooo

@@ -1,0 +1,3 @@
+:gempath:
+  - ~/local/stow/rubygems
+install: --install-dir ~/local/stow/rubygems
