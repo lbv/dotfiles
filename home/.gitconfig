@@ -1,6 +1,8 @@
 [alias]
 	ci = commit
 	co = checkout
+	df = diff
+	dt = difftool
 	lg = log --date=relative --graph --decorate
 	stp = subtree push
 	ss = status -s
@@ -21,3 +23,7 @@
 [user]
 	name = Leonardo B
 	email = leonardo@diptongonante.com
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
