@@ -75,6 +75,7 @@ Plugin 'vim-scripts/wombat256.vim'
 " Language specific syntax and format integration
 Plugin 'aklt/plantuml-syntax'
 Plugin 'dag/vim-fish'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'dpwright/vim-tup'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
