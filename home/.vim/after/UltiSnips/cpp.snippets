@@ -61,6 +61,8 @@ snippet gen "Generator template"
 #define MAXT 100$1
 #define NCRIT 3
 
+#define Rand(lo,hi) (rand() % ((hi)-(lo)+1) + (lo))
+
 
 int T;
 
